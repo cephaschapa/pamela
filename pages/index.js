@@ -38,17 +38,17 @@ export default function Home({data,data2}) {
           <h2 className="text-4xl mb-6 mt-16">Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 space-x-2">
             <div className="flex flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
-                <img src="/img (2).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full"/>
+                <Image src="/img (2).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full" height={70} width={70}/>
                 <p className="mt-4 font-bold">Pamela</p>
                 <p className="text-sm">Co-Founder</p>
             </div>
             <div className="flex flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
-                <img src="/img (1).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full"/>
+                <Image src="/img (1).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full" height={70} width={70}/>
                 <p className="mt-4 font-bold">John Doe</p>
                 <p className="text-sm">Co-Founder</p>
             </div>
             <div className="flex flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
-                <img src="/img (3).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full"/>
+                <Image src="/img (3).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full" height={70} width={70}/>
                 <p className="mt-4 font-bold">Mary Doe</p>
                 <p className="text-sm">Programme Manager</p>
             </div>
@@ -61,8 +61,8 @@ export default function Home({data,data2}) {
             
             <div className="flex flex-col p-2 rounded-2xl items-center mt-2">
                 <a href="https://www.facebook.com/wingedgirlszm/?ref=page_internal" className="">
-                <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center">
-                  <img src="/fb.png" className="mx-auto"/>
+                <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center justify-center">
+                  <Image src="/fb.png" height={60} width={60}/>
                 </div>
                 </a>
                 <p className="mt-4 font-bold">Facebook</p>
@@ -70,23 +70,23 @@ export default function Home({data,data2}) {
             </div>
             <div className="flex flex-col p-2 rounded-2xl items-center mt-2">
               <a href="https://www.instagram.com/wingedgirlszm/?utm_medium=copy_link&fbclid=IwAR1M5xbC5cmwkY2XTLCgyAnSr5_RpFn9WWqIys5KJWOElaTuizpBIQqyRAc" className="">
-                <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center">
-                  <img src="/insta.png" className="mx-auto"/>
+                <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center justify-center">
+                <Image src="/insta.png" height={60} width={60}/>
                 </div>
               </a>
                 <p className="mt-4 font-bold">Instagram</p>
                 <p className="text-sm">Co-Founder</p>
             </div>
             <div className="flex flex-col p-2 rounded-2xl items-center mt-2">
-            <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center">
-                  <img src="/email.png" className="mx-auto"/>
+            <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center justify-center">
+                  <Image src="/email.png" height={60} width={60}/>
                 </div>
                 <p className="mt-4 font-bold">Email</p>
                 <p className="text-sm">wingedgirlszm.@gmail.com</p>
             </div>
             <div className="flex flex-col p-2 rounded-2xl items-center mt-2">
-            <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center">
-                  <img src="/phone.png" className="mx-auto"/>
+            <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center justify-center">
+                <Image src="/phone.png" height={60} width={60}/>
                 </div>
                 <p className="mt-4 font-bold">Mobile</p>
                 <p className="text-sm">+260973757535</p>
