@@ -4,6 +4,7 @@ import Banner from '../components/Banner'
 import Header from '../components/Header'
 import MedCard from '../components/MedCard'
 import Footer from '../components/Footer'
+import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 
 export default function Home({data,data2}) {
   
@@ -25,7 +26,7 @@ export default function Home({data,data2}) {
         {/* Banner End */}
       <main className="text-gray-500 max-w-7xl mx-auto px-8 sm:px-16">
         <section className="pt-12 " id="about">
-          <h2 className="text-4xl mb-6 text-center">About Us</h2>
+          <h2 className="text-4xl mb-6 text-center">WingEd Girls</h2>
           <div className="grid grid-cols-1 text-center">
             {/* Pull data from server */}
             <p>Our focus is on menstral health management, we distribute and teach girls in rural areas how make reusable pads. Our organisation also carries out talks to encourace girls to stay in school and choose career paths.</p>
@@ -35,19 +36,34 @@ export default function Home({data,data2}) {
               )
             })} */}
           </div>
-          <h2 className="text-4xl mb-6 mt-16 text-center">Our Team</h2>
-          <div className="justify-center items-center grid grid-cols-1 md:grid-cols-3 space-x-2">
-            <div className="flex flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
-                <Image src="/pamela.jpeg" className="h-24 w-24 border-4 border-pink-500 rounded-2xl" height={135} width={80}/>
-                <p className="mt-4 font-bold">Pamela</p>
-                <p className="text-sm">Co-Founder</p>
-            </div>
-            <div className="flex h-52 flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
-                <Image src="/mwape.jpeg" className="h-32 w-24 border-4 border-pink-500 rounded-2xl" height={200} width={80}/>
-                <p className="mt-4 font-bold">Mwape Kapepula</p>
-                <p className="text-sm">Co-Founder</p>
-            </div>
-            
+          <h2 className="text-4xl mb-6 mt-16 text-center">The Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="p-2 m-4 flex flex-col items-center justify-center h-62 shadow-md rounded-2xl border border-gray-100">
+                  <div className="relative h-24 w-24 border-4 border-pink-500 rounded-full">
+                    <Image src="/pamela.jpeg" className=" rounded-full" layout="fill" objectFit="cover"/>
+                  </div>
+                  <div className="flex flex-col items-center p-2">
+                      <p className="font-bold">Pamela</p>
+                      <p className="text-sm">Co-Founder</p>
+                  </div>
+                  {/* <div className="flex space-x-3">
+                      <a className="p-3 bg-pink-500 rounded-full text-white" href="tel:260973757535"><PhoneIcon className="h-6 w-6"/></a>
+                      <a className="p-3 bg-pink-500 rounded-full text-white" href="mailto:wingedgirlszm.@gmail.com"><MailIcon className="h-6 w-6"/></a>
+                  </div> */}
+              </div>
+              <div className="p-2 m-4 flex flex-col items-center justify-center h-62 shadow-md rounded-2xl border border-gray-100">
+                  <div className="relative h-24 w-24 border-4 border-pink-500 rounded-full">
+                    <Image src="/mwape.jpeg" className=" rounded-full" layout="fill" objectFit="cover"/>
+                  </div>
+                  <div className="flex flex-col items-center p-2">
+                      <p className="font-bold">Mwape Kapepula</p>
+                      <p className="text-sm">Co-Founder</p>
+                  </div>
+                  {/* <div className="flex space-x-3">
+                      <a className="p-3 bg-pink-500 rounded-full text-white" href="tel:260966245070"><PhoneIcon className="h-6 w-6"/></a>
+                      <a className="p-3 bg-pink-500 rounded-full text-white" href="mailto:wingedgirlszm.@gmail.com"><MailIcon className="h-6 w-6"/></a>
+                  </div> */}
+              </div>
           </div>
         </section>
         <section className="pt-16" id="contact">
