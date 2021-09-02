@@ -11,7 +11,7 @@ function Contact() {
     const subscribe = async (e) => {
         e.preventDefault() // prevents page reload
         try {
-            const res = await fetch('https://gmail.us20.list-manage.com/subscribe/post?u=ac601dc4870e4def22bbd33e3&amp;id=72b52cf1bb', {
+            const res = await fetch('./api/subscribe', {
               method: 'post',
               headers: {
                 'Content-Type': 'application/json'
