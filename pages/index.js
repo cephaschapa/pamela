@@ -25,8 +25,8 @@ export default function Home({data,data2}) {
         {/* Banner End */}
       <main className="text-gray-500 max-w-7xl mx-auto px-8 sm:px-16">
         <section className="pt-12 " id="about">
-          <h2 className="text-4xl mb-6">About Us</h2>
-          <div className="grid grid-cols-1">
+          <h2 className="text-4xl mb-6 text-center">About Us</h2>
+          <div className="grid grid-cols-1 text-center">
             {/* Pull data from server */}
             <p>Our focus is on menstral health management, we distribute and teach girls in rural areas how make reusable pads. Our organisation also carries out talks to encourace girls to stay in school and choose career paths.</p>
             {/* {data?.map(place=>{
@@ -35,7 +35,7 @@ export default function Home({data,data2}) {
               )
             })} */}
           </div>
-          <h2 className="text-4xl mb-6 mt-16">Our Team</h2>
+          <h2 className="text-4xl mb-6 mt-16 text-center">Our Team</h2>
           <div className="justify-center items-center grid grid-cols-1 md:grid-cols-3 space-x-2">
             <div className="flex flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
                 <Image src="/pamela.jpeg" className="h-24 w-24 border-4 border-pink-500 rounded-2xl" height={135} width={80}/>
@@ -51,7 +51,7 @@ export default function Home({data,data2}) {
           </div>
         </section>
         <section className="pt-16" id="contact">
-          <h2 className="text-4xl">Contact Us</h2>
+          <h2 className="text-4xl text-center">Our Pages</h2>
           {/* <p className="text-2xl mt-4">Our Social</p> */}
           <div className="grid grid-cols-1 md:grid-cols-4 space-x-2 mt-8">
             
@@ -88,7 +88,7 @@ export default function Home({data,data2}) {
                 <p className="text-sm">+260973757535</p>
             </div>
           </div>
-          <h1 className="text-4xl mt-16" id="ourwork">Our Work</h1>
+          {/* <h1 className="text-4xl mt-1 text-center" id="ourwork">Our Work</h1> */}
           <div className="">
          
                 {/* <Mailchimp
@@ -103,7 +103,7 @@ export default function Home({data,data2}) {
               ]}
               /> */}
           </div>
-          <div className="flex p-3 overflow-auto space-x-3 py-3 scrollbar-hide w-full mt-10" id="donate">
+          {/* <div className="flex p-3 overflow-auto space-x-3 py-3 scrollbar-hide w-full mt-10" id="donate">
             {
               data2?.map(data=>{
                 return (
@@ -111,14 +111,14 @@ export default function Home({data,data2}) {
                 )
               })
             }
-          </div>
+          </div> */}
         </section>
         <section className="p-3 mt-20 mb-20 relative h-[300px] space-y-3">
             <Image src="/girls.jpg" layout="fill" objectFit="cover" className="rounded-xl"/>
           <div className="relative top-16 space-y-3">
             <h1 className="text-3xl text-white font-bold">Support Our Cause</h1>
             
-            <button className="bg-pink-500 text-white rounded-2xl p-3">Get inspired</button>
+            <button className="bg-pink-500 text-white rounded-2xl p-3">Donate</button>
           </div>
         </section>
       </main>

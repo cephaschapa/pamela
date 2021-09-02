@@ -15,13 +15,13 @@ function Header() {
                 
                 {/* Left items */}
                 <div className="flex flex-grow justify-end space-x-4 items-center text-pink-500 lg:space-x-10">
-                    <Link href="#home">
+                    <Link href="/">
                         <div className="flex flex-col items-center cursor-pointer md:space-y-1 transiton duration-150 hover:bg-pink-500 hover:text-white p-2 rounded-2xl">
                             <HomeIcon className="h-7 w-7"/>
                             <p  className="hidden md:inline text-sm">Home</p>
                         </div>
                     </Link>
-                    <Link href="#about">
+                    <Link href="/about">
                     <div className="flex flex-col items-center cursor-pointer md:space-y-1 transiton duration-150 hover:bg-pink-500 hover:text-white p-2 rounded-2xl">
                             <InformationCircleIcon className="h-7 w-7"/>
                             <p  className="hidden md:inline text-sm">About</p>
