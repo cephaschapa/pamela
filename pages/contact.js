@@ -60,7 +60,7 @@ function Contact() {
                             </div>
                             <div className="flex space-x-3">
                                 <a className="p-3 bg-pink-500 rounded-full text-white" href="tel:260973757535"><PhoneIcon className="h-6 w-6"/></a>
-                                <a className="p-3 bg-pink-500 rounded-full text-white" href="mailto:wingedgirlszm.@gmail.com"><MailIcon className="h-6 w-6"/></a>
+                                <a className="p-3 bg-pink-500 rounded-full text-white" href="mailto:wingedgirlszm@gmail.com"><MailIcon className="h-6 w-6"/></a>
                             </div>
                         </div>
                         <div className="p-2 m-4 flex flex-col items-center justify-center h-62 shadow-md rounded-2xl border border-gray-100">
@@ -73,7 +73,7 @@ function Contact() {
                             </div>
                             <div className="flex space-x-3">
                                 <a className="p-3 bg-pink-500 rounded-full text-white" href="tel:260966245070"><PhoneIcon className="h-6 w-6"/></a>
-                                <a className="p-3 bg-pink-500 rounded-full text-white" href="mailto:wingedgirlszm.@gmail.com"><MailIcon className="h-6 w-6"/></a>
+                                <a className="p-3 bg-pink-500 rounded-full text-white" href="mailto:wingedgirlszm@gmail.com"><MailIcon className="h-6 w-6"/></a>
                             </div>
                         </div>
                     </div>
