@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
 import MedCard from '../components/MedCard'
-import PlacesCard from '../components/PlacesCard'
+import Footer from '../components/Footer'
 
 export default function Home({data,data2}) {
   
@@ -36,22 +36,18 @@ export default function Home({data,data2}) {
             })} */}
           </div>
           <h2 className="text-4xl mb-6 mt-16">Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 space-x-2">
+          <div className="justify-center items-center grid grid-cols-1 md:grid-cols-3 space-x-2">
             <div className="flex flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
-                <Image src="/img (2).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full" height={70} width={70}/>
+                <Image src="/pamela.jpeg" className="h-24 w-24 border-4 border-pink-500 rounded-2xl" height={135} width={80}/>
                 <p className="mt-4 font-bold">Pamela</p>
                 <p className="text-sm">Co-Founder</p>
             </div>
-            <div className="flex flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
-                <Image src="/img (1).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full" height={70} width={70}/>
-                <p className="mt-4 font-bold">John Doe</p>
+            <div className="flex h-52 flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
+                <Image src="/mwape.jpeg" className="h-32 w-24 border-4 border-pink-500 rounded-2xl" height={200} width={80}/>
+                <p className="mt-4 font-bold">Mwape Kapepula</p>
                 <p className="text-sm">Co-Founder</p>
             </div>
-            <div className="flex flex-col bg-gray-100 p-2 rounded-2xl items-center mt-2">
-                <Image src="/img (3).jpg" className="h-24 w-24 border-4 border-pink-500 rounded-full" height={70} width={70}/>
-                <p className="mt-4 font-bold">Mary Doe</p>
-                <p className="text-sm">Programme Manager</p>
-            </div>
+            
           </div>
         </section>
         <section className="pt-16" id="contact">
@@ -93,6 +89,20 @@ export default function Home({data,data2}) {
             </div>
           </div>
           <h1 className="text-4xl mt-16" id="ourwork">Our Work</h1>
+          <div className="">
+         
+                {/* <Mailchimp
+              action='https://gmail.us20.list-manage.com/subscribe/post?u=ac601dc4870e4def22bbd33e3&amp;id=72b52cf1bb'
+              fields={[
+                {
+                  name: 'EMAIL',
+                  placeholder: 'Email',
+                  type: 'email',
+                  required: true
+                }
+              ]}
+              /> */}
+          </div>
           <div className="flex p-3 overflow-auto space-x-3 py-3 scrollbar-hide w-full mt-10" id="donate">
             {
               data2?.map(data=>{
@@ -112,12 +122,7 @@ export default function Home({data,data2}) {
           </div>
         </section>
       </main>
-      <footer className="items-center h-auto bg-gray-100">
-         
-         <div className="flex items-center h-[50px] bg-gray-900 w-full mt-16 text-gray-50">
-            <p className="mx-auto">WingEd Girls &copy; 2021</p>
-         </div>
-      </footer>
+      <Footer />
       
     </div>
   )
