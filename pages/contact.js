@@ -1,13 +1,19 @@
-import { LoginIcon, MailIcon, PaperAirplaneIcon, PhoneIcon } from '@heroicons/react/outline'
+import { LockClosedIcon, LoginIcon, MailIcon, PaperAirplaneIcon, PhoneIcon } from '@heroicons/react/outline'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useState } from 'react'
 import Link from 'next/link'
+// import {useState} from 'react'
 
 
 function Contact() {
+    const [openModal, setOpenModal] = useState(false)
+    const open = (e) =>{
+        e.preventDefault()
+        setOpenModal(true)
+    }
     const [input, setInput] = useState('')
     const subscribe = async (e) => {
         e.preventDefault() // prevents page reload
@@ -96,11 +102,59 @@ function Contact() {
                     <div className="relative top-16 space-y-3">
                         <h1 className="text-3xl text-white font-bold">Support Our Cause</h1>
                         
-                        <Link href="/contact" ><button className="bg-pink-500 text-white rounded-2xl p-3">Donate</button></Link>
+                        <button onClick={open} className="bg-pink-500 text-white rounded-2xl p-3">Donate</button>
                     </div>  
                 </section>
             </main>
             <Footer />
+            {openModal ? (
+                    <>
+                    <div
+                    className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ease-linear transition-all duration-150 text-gray-500"
+                    >
+                    <div className="relative my-6 mx-auto w-96">
+                        {/*content*/}
+                        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none h-auto overflow-auto text-sm">
+                        {/*header*/}
+                        <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                            <h3 className="text-xl font-semibold text-pink-500">
+                                Support this cause
+                            </h3>
+                            <button
+                            className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                            onClick={() => setShowModal1(false)}
+                            >
+                            <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                <LockClosedIcon className="text-pink-500 h-8" />
+                            </span>
+                            </button>
+                        </div>
+                        {/*body*/}
+                        <div className="relative p-6 flex-auto">
+                            <p>Kindly Send your donations to the numbers below. Or you can contact us at wingedgirlszm@gmail.com</p>
+                            <br></br>
+                            <p>+260 96 6245070</p>
+                            <p>+260 97 3757535</p>
+
+                        </div>
+                        {/*footer*/}
+                        <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                            <button
+                            className="bg-pink-500 font-bold uppercase px-6 py-3 rounded-2xl text-white text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button"
+                            onClick={() => setOpenModal(false)}
+                            >
+                            Close
+                            </button>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+                ) : null
+            }
             
         </div>
     )

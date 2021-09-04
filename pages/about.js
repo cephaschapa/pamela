@@ -1,11 +1,17 @@
-import { LoginIcon, MailIcon, PaperAirplaneIcon, PhoneIcon } from '@heroicons/react/outline'
+import { LockClosedIcon, LoginIcon, MailIcon, PaperAirplaneIcon, PhoneIcon } from '@heroicons/react/outline'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Link from 'next/link'
+import {useState} from 'react'
 
 function About() {
+    const [openModal, setOpenModal] = useState(false)
+    const open = (e) =>{
+        e.preventDefault()
+        setOpenModal(true)
+    }
     return (
         <div>
             <Head>
@@ -22,20 +28,84 @@ function About() {
                     </div>
             </section>
             <main className="text-gray-500 max-w-7xl mx-auto px-5 sm:px-5">
-                <section className=" py-10 text-center space-y-3">
-                <p className="text-3xl">The Mission</p>
-                <p>Our focus is on menstral health management, we distribute and teach girls in rural areas how make reusable pads. Our organisation also carries out talks to encourace girls to stay in school and choose career paths.</p>
+                <section className=" py-10 space-y-3 text-justify">
+                <p className="text-3xl text-center">The Mission</p>
+                <p className="">
+                    Our organization, WingEd girls, is aimed at assisting girls in underprivileged communities to stay in school inspite the challenges they face that are beyond their control. One such challenge is the menstrual cycle and the management of their menstrual period, which is where our focus lies.
+                </p>
+                <p className="">
+                    We are aware that in some parts of our country sanitary materials are not easily accessible and would like to bridge that gap. We also know that in places where they are accessible, not all girls are able to afford them and end up using alternative materials that may not be the most hygienic or good for their health. 
+                </p>
+                <p className="">
+                    Our aim is to provide them with a more sustainable and safe way of managing their menstrual periods, so we will be  providing them with a kit that includes washing soap, disposable and reusable pads for now. However, our long term goal is to not just give them the pads but teach them the skill of making the reusable pads so they in turn will be able to teach others and pay it forward.
+                </p>
+                <p className="">
+                    As part of the delivery package, we will also be carrying out discussions around menstrual hygiene; adding to any existing knowledge they already have as well as helping them understand the menstrual health and menstrual hygiene management as a whole.
+                </p>
+                <p className="">
+                    Additionally, during our interactions, we will also be carrying out career mentorship to showcase to the girls the different options that they have once they leave school and venture into the world. This will be done with the aid of multiple volunteers in different careers and various walks of life.
+                </p>
                 </section>
                 <section className="p-3 mt-10 mb-20 relative h-[300px] space-y-3">
                     <Image src="/girls.jpg" layout="fill" objectFit="cover" className="rounded-xl"/>
                     <div className="relative top-16 space-y-3">
                         <h1 className="text-3xl text-white font-bold">Support Our Cause</h1>
                         
-                        <Link href="/contact" ><button className="bg-pink-500 text-white rounded-2xl p-3">Donate</button></Link>
+                        <button onClick={open} className="bg-pink-500 text-white rounded-2xl p-3">Donate</button>
                     </div>  
                 </section>
             </main>
+
             <Footer />
+            {
+                                    openModal ? (
+                                        <>
+                                        <div
+                                        className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ease-linear transition-all duration-150 text-gray-500"
+                                        >
+                                        <div className="relative my-6 mx-auto w-96">
+                                            {/*content*/}
+                                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none h-auto overflow-auto text-sm">
+                                            {/*header*/}
+                                            <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                                                <h3 className="text-xl font-semibold text-pink-500">
+                                                    Support this cause
+                                                </h3>
+                                                <button
+                                                className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                onClick={() => setShowModal1(false)}
+                                                >
+                                                <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                                    <LockClosedIcon className="text-pink-500 h-8" />
+                                                </span>
+                                                </button>
+                                            </div>
+                                            {/*body*/}
+                                            <div className="relative p-6 flex-auto">
+                                                <p>Kindly Send your donations to the numbers below. Or you can contact us at wingedgirlszm@gmail.com</p>
+                                                <br></br>
+                                                <p>+260 96 6245070</p>
+                                                <p>+260 97 3757535</p>
+
+                                            </div>
+                                            {/*footer*/}
+                                            <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                                <button
+                                                className="bg-pink-500 font-bold uppercase px-6 py-3 rounded-2xl text-white text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                type="button"
+                                                onClick={() => setOpenModal(false)}
+                                                >
+                                                Close
+                                                </button>
+                                               
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                                    </>
+                                    ) : null
+                                }
         </div>
     )
 }

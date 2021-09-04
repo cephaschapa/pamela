@@ -4,9 +4,15 @@ import Banner from '../components/Banner'
 import Header from '../components/Header'
 import MedCard from '../components/MedCard'
 import Footer from '../components/Footer'
-import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
+import { LockClosedIcon, MailIcon, PhoneIcon } from '@heroicons/react/outline'
+import { useState } from 'react'
 
 export default function Home({data,data2}) {
+  const [openModal, setOpenModal] = useState(false)
+    const open = (e) =>{
+        e.preventDefault()
+        setOpenModal(true)
+    }
   
   return (
     <div className="">
@@ -45,6 +51,7 @@ export default function Home({data,data2}) {
                   <div className="flex flex-col items-center p-2">
                       <p className="font-bold">Pamela</p>
                       <p className="text-sm">Co-Founder</p>
+                      <p className="text-sm">+260 97 3757535</p>
                   </div>
                   {/* <div className="flex space-x-3">
                       <a className="p-3 bg-pink-500 rounded-full text-white" href="tel:260973757535"><PhoneIcon className="h-6 w-6"/></a>
@@ -58,6 +65,7 @@ export default function Home({data,data2}) {
                   <div className="flex flex-col items-center p-2">
                       <p className="font-bold">Mwape Kapepula</p>
                       <p className="text-sm">Co-Founder</p>
+                      <p className="text-sm">+260 96 6245070</p>
                   </div>
                   {/* <div className="flex space-x-3">
                       <a className="p-3 bg-pink-500 rounded-full text-white" href="tel:260966245070"><PhoneIcon className="h-6 w-6"/></a>
@@ -78,7 +86,7 @@ export default function Home({data,data2}) {
                 </div>
                 </a>
                 <p className="mt-4 font-bold">Facebook</p>
-                <p className="text-sm">Co-Founder</p>
+                <p className="text-sm">@wingedgirlszm</p>
             </div>
             <div className="flex flex-col p-2 rounded-2xl items-center mt-2">
               <a href="https://www.instagram.com/wingedgirlszm/?utm_medium=copy_link&fbclid=IwAR1M5xbC5cmwkY2XTLCgyAnSr5_RpFn9WWqIys5KJWOElaTuizpBIQqyRAc" className="">
@@ -87,14 +95,14 @@ export default function Home({data,data2}) {
                 </div>
               </a>
                 <p className="mt-4 font-bold">Instagram</p>
-                <p className="text-sm">Co-Founder</p>
+                <p className="text-sm">@wingedgirlszm</p>
             </div>
             <div className="flex flex-col p-2 rounded-2xl items-center mt-2">
             <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center justify-center">
                   <Image src="/email.png" height={60} width={60}/>
                 </div>
                 <p className="mt-4 font-bold">Email</p>
-                <p className="text-sm">wingedgirlszm.@gmail.com</p>
+                <p className="text-sm">wingedgirlszm@gmail.com</p>
             </div>
             <div className="flex flex-col p-2 rounded-2xl items-center mt-2">
             <div className="h-24 w-24 bg-pink-500 rounded-full flex items-center justify-center">
@@ -134,11 +142,59 @@ export default function Home({data,data2}) {
           <div className="relative top-16 space-y-3">
             <h1 className="text-3xl text-white font-bold">Support Our Cause</h1>
             
-            <button className="bg-pink-500 text-white rounded-2xl p-3">Donate</button>
+            <button onClick={open} className="bg-pink-500 text-white rounded-2xl p-3">Donate</button>
           </div>
         </section>
       </main>
       <Footer />
+      {openModal ? (
+                    <>
+                    <div
+                    className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ease-linear transition-all duration-150 text-gray-500"
+                    >
+                    <div className="relative my-6 mx-auto w-96">
+                        {/*content*/}
+                        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none h-auto overflow-auto text-sm">
+                        {/*header*/}
+                        <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                            <h3 className="text-xl font-semibold text-pink-500">
+                                Support this cause
+                            </h3>
+                            <button
+                            className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                            onClick={() => setShowModal1(false)}
+                            >
+                            <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                <LockClosedIcon className="text-pink-500 h-8" />
+                            </span>
+                            </button>
+                        </div>
+                        {/*body*/}
+                        <div className="relative p-6 flex-auto">
+                            <p>Kindly Send your donations to the numbers below. Or you can contact us at wingedgirlszm@gmail.com</p>
+                            <br></br>
+                            <p>+260 96 6245070</p>
+                            <p>+260 97 3757535</p>
+
+                        </div>
+                        {/*footer*/}
+                        <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                            <button
+                            className="bg-pink-500 font-bold uppercase px-6 py-3 rounded-2xl text-white text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button"
+                            onClick={() => setOpenModal(false)}
+                            >
+                            Close
+                            </button>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+                ) : null
+            }
       
     </div>
   )
