@@ -49,7 +49,7 @@ export default function Home({data,data2}) {
                     <Image src="/pamela.jpeg" className=" rounded-full" layout="fill" objectFit="cover"/>
                   </div>
                   <div className="flex flex-col items-center p-2">
-                      <p className="font-bold">Pamela</p>
+                      <p className="font-bold">Pamela Mateyo</p>
                       <p className="text-sm">Co-Founder</p>
                       <p className="text-sm">+260 97 3757535</p>
                   </div>
