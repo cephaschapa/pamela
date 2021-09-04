@@ -12,7 +12,7 @@ function Banner() {
     return (
         <div className="relative h-[300px] md:h-[500px] xl:h-[800px]">
             <Image src="/img (2).jpg" layout="fill" objectFit="cover"/>
-            <div className="absolute top-52 w-full text-center">
+            <div className="absolute top-10 lg:top-52 w-full text-center">
                 <p className="text-2xl md:text-3xl font-bold text-white">We equipe girls to soar to greater heights one pad at a time.</p>
                 <button onClick={open} className="text-white bg-pink-500 p-5 rounded-xl mt-10 shadow-lg transition duration-150 hover:shadow-2xl active:scale-95">Support Us</button>
             </div>
