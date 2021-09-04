@@ -101,7 +101,6 @@ function Contact() {
                     <Image src="/girls.jpg" layout="fill" objectFit="cover" className="rounded-xl"/>
                     <div className="relative top-16 space-y-3">
                         <h1 className="text-3xl text-white font-bold">Support Our Cause</h1>
-                        
                         <button onClick={open} className="bg-pink-500 text-white rounded-2xl p-3">Donate</button>
                     </div>  
                 </section>
