@@ -6,7 +6,9 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      tableLayout: ['hover', 'focus'],
+    },
   },
   plugins: [
     require('tailwind-scrollbar'),
