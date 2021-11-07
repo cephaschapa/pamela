@@ -21,7 +21,7 @@ function Contact() {
        
         const token = cookieCutter.get('token')
         console.log(token)
-        axios.post('http://localhost:5000/api/v1/lists', {
+        axios.post('https://wingedgirls.herokuapp.com/api/v1/lists', {
             name: listname,
             email: email,   
         },{

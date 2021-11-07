@@ -13,7 +13,7 @@ const index = () => {
     const submitHander = (e) => {
         e.preventDefault()
         console.log(email, password)
-        axios.post('http://localhost:5000/api/v1/auth/login', {
+        axios.post('https://wingedgirls.herokuapp.com/api/v1/auth/login', {
             email: email,
             password: password,   
         }).then(response => {

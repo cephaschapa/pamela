@@ -115,7 +115,7 @@ export async function getServerSideProps(context){
     const cookies = new Cookies(context.req, context.res)
     const token = cookies.get('token')
 
-    const data = await axios.get('http://localhost:5000/api/v1/blogs', {
+    const data = await axios.get('https://wingedgirls.herokuapp.com/api/v1/blogs', {
         headers: {
             'Content-Type': 'application/json',
             accept: '*/*',

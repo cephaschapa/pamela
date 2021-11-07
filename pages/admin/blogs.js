@@ -23,7 +23,7 @@ const blogs = (props) => {
         console.log(token)
         e.preventDefault()
         console.log(title, description, url, author)
-        await axios.post('http://localhost:5000/api/v1/blogs',{
+        await axios.post('https://wingedgirls.herokuapp.com/api/v1/blogs',{
             title: title,
             description: description,
             imageUrl: url,
@@ -198,7 +198,7 @@ export async function getServerSideProps(context){
     const cookies = new Cookies(context.req, context.res)
     const token = cookies.get('token')
 
-    const data = await axios.get('http://localhost:5000/api/v1/blogs', {
+    const data = await axios.get('https://wingedgirls.herokuapp.com/api/v1/blogs', {
         headers: {
             'Content-Type': 'application/json',
             accept: '*/*',
