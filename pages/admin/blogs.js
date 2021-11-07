@@ -8,7 +8,7 @@ import {useState} from 'react'
 import axios from 'axios'
 import cookieCutter from 'cookie-cutter'
 
-const blogs = (props) => {
+const Blogs = (props) => {
     const [openModal, setOpenModal] = useState(false)
     const [title, setTitle] = useState('Title')
     const [description, setDescription] = useState('Description')
@@ -192,7 +192,7 @@ const blogs = (props) => {
     )
 }
 
-export default blogs
+export default Blogs
 
 export async function getServerSideProps(context){
     const cookies = new Cookies(context.req, context.res)
