@@ -1,5 +1,5 @@
 import Image from "next/image"
-import  {AtSymbolIcon, BriefcaseIcon, GlobeAltIcon, HomeIcon, InformationCircleIcon, LockClosedIcon, MenuIcon, SearchIcon, UserIcon} from '@heroicons/react/outline'
+import  {AtSymbolIcon, BriefcaseIcon, GlobeAltIcon, HomeIcon, InformationCircleIcon, LockClosedIcon, MenuIcon, SearchIcon, UserIcon, ViewListIcon} from '@heroicons/react/outline'
 import Link from "next/link"
 import {useState} from "react"
 
@@ -31,6 +31,12 @@ function Header() {
                     <div className="flex flex-col items-center cursor-pointer md:space-y-1 transiton duration-150 hover:bg-pink-500 hover:text-white p-2 rounded-2xl">
                             <InformationCircleIcon className="h-7 w-7"/>
                             <p  className="hidden md:inline text-sm">About</p>
+                        </div>
+                    </Link>
+                    <Link href="/blogs">
+                    <div className="flex flex-col items-center cursor-pointer md:space-y-1 transiton duration-150 hover:bg-pink-500 hover:text-white p-2 rounded-2xl">
+                            <ViewListIcon className="h-7 w-7"/>
+                            <p  className="hidden md:inline text-sm">Blogs</p>
                         </div>
                     </Link>
                     <Link href="/contact">

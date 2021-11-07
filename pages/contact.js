@@ -5,38 +5,49 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useState } from 'react'
 import Link from 'next/link'
-// import {useState} from 'react'
+import axios from 'axios'
+import cookieCutter from 'cookie-cutter'
+
 
 
 function Contact() {
     const [openModal, setOpenModal] = useState(false)
+    const [email, setEmail] = useState()
+    const [listname, setlistname] = useState()
+
+    const subscribe = (e) => {
+        e.preventDefault()
+        // console.log(email, password)
+       
+        const token = cookieCutter.get('token')
+        console.log(token)
+        axios.post('http://localhost:5000/api/v1/lists', {
+            name: listname,
+            email: email,   
+        },{
+            headers: {
+                'Content-Type': 'application/json',
+                accept: '*/*',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+        }}).then(response => {
+            if(response.status === 201){
+                console.log(response)
+                alert("Subscription was successfull")}
+                setEmail('')
+                setlistname('')
+        }).catch(error => {
+            alert("Invalid Credentials")
+        })
+    }
+
+    
     const open = (e) =>{
         e.preventDefault()
         setOpenModal(true)
     }
     const [input, setInput] = useState('')
-    const subscribe = async (e) => {
-        e.preventDefault() // prevents page reload
-        try {
-            const res = await fetch('./api/subscribe', {
-              method: 'post',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                emailAddress: input
-              })
-            })
-            
-            if (res.status === 200) {
-              alert('You are subscribed!')
-            } else {
-              alert('Sorry, something went wrong.')
-            }
-          } catch(err) {
-            alert('Sorry, something went wrong.')
-          }
-      }
+    
     return (
         <div>
              <Head>
@@ -86,11 +97,12 @@ function Contact() {
                 </section>
                 <section className="">
                     <p className="text-3xl text-center p-2">Be on our mailing list</p>
-                    <div className='p-8 justify-center items-center flex'>
-                        <form className='flex p-2 border border-pink-500 rounded-full'>
-                            <input  value={input} onChange={e => setInput(e.target.value)} className='p-2 flex-1 outline-none' id='email' type='email' aria-label='email address' placeholder='Enter your email address' />
+                    <div className='p-8 justify-center items-center flex w-full'>
+                        <form className='flex flex-col p-2 w-1/2 space-y-4'>
+                            <input  value={listname} onChange={e => setlistname(e.target.value)} className='p-4 border flex-1 outline-none border-pink-500 rounded-full' id='email' type='email' aria-label='email address' placeholder='Enter your name' />
+                            <input  value={email} onChange={e => setEmail(e.target.value)} className='p-4 border flex-1 outline-none border-pink-500 rounded-full' id='email' type='email' aria-label='email address' placeholder='Enter your email address' />
                             <button onClick={subscribe} className='bg-pink-500 rounded-full hover:bg-blue-700 duration-300 text-white shadow p-2' type='submit'>
-                                <PaperAirplaneIcon className='h-6 w-6 rotate-90'/>
+                                Subscribe
                             </button>
                         </form>
                     </div>

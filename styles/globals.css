@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
-body{
-    font-family:'Spartan', sans-serif;;
-  }
+body {
+  font-family: 'Spartan', sans-serif;
+}
+
+.main {
+  background: url('/img (2).jpg') no-repeat center;
+  background-size: cover;
+}

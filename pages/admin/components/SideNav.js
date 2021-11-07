@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const SideNav = () => {
     return (
-        <div className="w-96 p-4 bg-pink-500 fixed h-full">
+        <div className="w-96 p-4 bg-pink-500 fixed h-full z-50">
                 <div className="text-2xl pt-10 text-white  space-y-3">
                     <div className="bg-white h-24 w-24 rounded-full flex items-center justify-center">
                     <UserCircleIcon className="h-16 w-16 text-pink-500"/>
@@ -16,7 +16,7 @@ const SideNav = () => {
                 </div>
                 <div className="py-4">
                     <ul className="space-y-4">
-                        <Link href="/admin">
+                        <Link href="/admin/dashboard">
                             <li className="cursor-pointer">
                                 <div className="flex space-x-1 items-center bg-pink-100 p-4 rounded-2xl text-pink-500"><DatabaseIcon className="h-6 w-7"/><p>Stats</p></div>
                             </li>

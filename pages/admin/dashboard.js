@@ -1,14 +1,20 @@
 import Header from "./components/Header"
 import SideNav from "./components/SideNav"
+import {cookieCutter} from 'cookie-cutter'
 import Cookies from 'cookies'
+import {useRouter} from 'next/router'
+import { getCookie } from 'cookies-next';
 import axios from 'axios'
 
-const mailinglist = (props) => {
-
+const index = (props) => {
     console.log(props)
     const lists = props.d.data
     console.log(lists)
-
+    
+    const list = lists.map(d=>{
+        console.log(d.name)
+    })
+    
     const data = [
         {
             "id": 1,
@@ -41,14 +47,33 @@ const mailinglist = (props) => {
             "email": "ocm@gmail.com"
         },
     ]
+    
     return (
         <div className="flex h-screen">
             <SideNav />
             <div className="w-full ml-96 relative">
-                <Header title="Mailing List"/>
+                <Header title="Stats"/>
                 <div className="mt-24">
                     <div className="flex flex-col bg-gray-50 w-full h-screen p-4">
-                    <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                        <div className="flex justify-between items-center shadow overflow-hidden border-b border-gray-200 sm:rounded-lg mb-10 p-4">
+                            <div className="flex flex-col justify-center items-center h-32 w-72 bg-pink-500 rounded-2xl">
+                                <p className="text-white text-5xl">50</p>
+                                <p className="text-white">Blog Posts</p>
+                            </div>      
+                            <div className="flex flex-col justify-center items-center h-32 w-72 bg-pink-500 rounded-2xl">
+                                <p className="text-white text-5xl">500</p>
+                                <p className="text-white">Members</p>
+                            </div>  
+                            <div className="flex flex-col justify-center items-center h-32 w-72 bg-pink-500 rounded-2xl">
+                                <p className="text-white text-5xl">500K</p>
+                                <p className="text-white">Site Visits</p>
+                            </div>
+                            <div className="flex flex-col justify-center items-center h-32 w-72 bg-pink-500 rounded-2xl">
+                                <p className="text-white text-5xl">ZMK 50K</p>
+                                <p className="text-white">Donations</p>
+                            </div>                
+                        </div>
+                        <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                             <table className="min-w-full divide-y divide-gray-200">
                             <thead className="bg-gray-50">
                                 <tr>
@@ -96,7 +121,7 @@ const mailinglist = (props) => {
                                 }
                             </tbody>
                             </table>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,7 +129,7 @@ const mailinglist = (props) => {
     )
 }
 
-export default mailinglist
+export default index 
 
 export async function getServerSideProps(context){
     const cookies = new Cookies(context.req, context.res)
